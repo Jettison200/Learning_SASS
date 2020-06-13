@@ -1,0 +1,1 @@
+First sass project, I remade themesbrand's hero section in pure html and sass!
