@@ -1,26 +1,27 @@
-%btn{
-border-radius: 3px;
-padding: 10px 20px;
-margin: 3px;
-outline: none;
-border: none;
-cursor: pointer;
-transition: $general-transition;
+$general-transition: 0.4s all ease;
+%btn {
+  border-radius: 3px;
+  padding: 10px 20px;
+  margin: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: $general-transition;
 }
 
-.primary-btn{
-@extend %btn;
-&:hover{
+.primary-btn {
+  @extend %btn;
+  &:hover {
     background-color: darken(#ffffff, 15%);
+  }
 }
-}
-.secondary-btn{
-    @extend %btn;
-    background-color: #6658dd;
-    border-color:#6658dd;
-    color: white;
+.secondary-btn {
+  @extend %btn;
+  background-color: #6658dd;
+  border-color: #6658dd;
+  color: white;
 
-    &:hover{
-        background-color: darken(#6658dd, 10%);
-    }
+  &:hover {
+    background-color: darken(#6658dd, 10%);
+  }
 }

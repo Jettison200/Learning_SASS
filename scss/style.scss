@@ -3,7 +3,7 @@
 $text: "Nunito Sans", sans-serif;
 $heading: "Sarabun", sans-serif;
 $subtext: rgba(255, 255, 255, 0.6);
-$general-transition: 0.4s all ease ;
+
 * {
   margin: 0;
   padding: 0;
@@ -16,8 +16,8 @@ body {
 
 header {
   background-image: url("/images/web-bg.png");
-min-height: calc(100vh - 25px);
-
+  min-height: calc(100vh - 25px);
+  background-attachment: fixed;
   .header-container {
     max-width: 1290px;
     margin: 0 auto;
@@ -37,34 +37,33 @@ min-height: calc(100vh - 25px);
     ul {
       display: flex;
 
-      .drop-down{
+      .drop-down {
+        ul {
+          position: absolute;
+          display: none;
+          background-color: white;
+          border-radius: 5px;
+          margin-top: 20px;
+          li {
+            margin: 0;
+            border-radius: 5px;
+            padding: 8px 10px;
 
-          ul{
-              position: absolute;
-              display: none;
-              background-color: white;
-              border-radius: 5px;
-              margin-top: 20px;
-              li{
-                  margin: 0;
-                  border-radius: 5px;
-                  padding: 8px 10px;
+            &:hover {
+              background-color: rgba(228, 228, 228, 0.61);
+            }
 
-                  &:hover{
-                      background-color: rgba(228, 228, 228, 0.61);
-                  }
-              
-              a{
-                color: #6c757d;
-                padding: 16px 10px;
-                width: 236px;
-              }
-              }
+            a {
+              color: #6c757d;
+              padding: 16px 10px;
+              width: 236px;
+            }
           }
+        }
 
-          &:hover ul{
-display: block;
-          }
+        &:hover ul {
+          display: block;
+        }
       }
 
       li {
@@ -73,10 +72,9 @@ display: block;
         list-style: none;
         color: set-text-color($subtext);
 
-        
         a {
-            color: set-text-color($subtext);
-          transition:$general-transition;;
+          color: set-text-color($subtext);
+          transition: $general-transition;
           text-decoration: none;
           font-size: 14px;
 
@@ -112,64 +110,56 @@ display: block;
       margin: 36px 0 72px 0;
       color: set-text-color($subtext);
     }
-
-
   }
 }
 
-section{
-    height: 100vh;
-    background-color: grey;
+section {
+  height: 100vh;
+  background-color: grey;
 }
 
-
-@media screen and (max-width: 960px){
-    header{
-    nav{
-        height: 38px;
-        ul{
-            display: none;
-        }
+@media screen and (max-width: 960px) {
+  header {
+    nav {
+      height: 38px;
+      ul {
+        display: none;
+      }
     }
     .header-container {
-        padding:15px 30px;
-      }
+      padding: 15px 30px;
+    }
 
     .header-hero {
-        align-items: flex-start;
-        flex-direction: column;
-        h1 {
-            font-size: 34px;
-            max-width: 100%;
-
-          }
-   img{
-       width: 60%;
-   }
-}
-}
-}
-
-@media screen and (max-width: 700px){
-    header{
-        .header-hero {
-       img{
-           width: 100%;
-       }
+      align-items: flex-start;
+      flex-direction: column;
+      h1 {
+        font-size: 34px;
+        max-width: 100%;
+      }
+      img {
+        width: 60%;
+      }
     }
-    }
-    
-    
-
+  }
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 700px) {
+  header {
+    .header-hero {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
 
-    header{
-        .header-hero {
-       img{
+@media screen and (max-width: 500px) {
+  header {
+    .header-hero {
+      img {
         display: none;
-       }
+      }
     }
-    }
+  }
 }
